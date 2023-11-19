@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 11:49:30 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/11/19 15:27:57 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/11/19 18:06:48 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,22 +24,24 @@ Account::Account( int initial_deposit )
 {
 	_accountIndex		= i;
 	_amount				= initial_deposit;
+	_totalAmount		+= _amount;
 	_nbDeposits			= 0;
 	_nbWithdrawals		= 0;
 	i++;
 	_displayTimestamp();
-	std::cout << "index:" << _accountIndex << ";amount;" << _amount << ";created"<< std::endl;
+	std::cout << "index:" << _accountIndex << ";amount:" << _amount << ";created"<< std::endl;
 }
 
 void	Account::makeDeposit( int deposit )
 {
 	_nbDeposits++;
 	_amount += deposit;
-	_totalAmount += _amount;
+	_totalAmount += deposit;
 	_totalNbDeposits++;
+	_displayTimestamp();
 	std::cout << "index:" << _accountIndex<< ";p_amount:"
 	<< _amount - deposit << ";deposit:" << deposit << ";amount:"
-	<< _amount << ";nb_deposits:" << Account::getNbDeposits() << std::endl;
+	<< _amount << ";nb_deposits:" << _nbDeposits << std::endl;
 }
 
 bool	Account::makeWithdrawal( int withdrawal )
@@ -68,7 +70,7 @@ int		Account::checkAmount( void ) const
 void	Account::displayStatus( void ) const
 {
 	_displayTimestamp();
-	std::cout << "index:" << _accountIndex << ";amount;" << _amount << ";deposits:"
+	std::cout << "index:" << _accountIndex << ";amount:" << _amount << ";deposits:"
 	<< _nbDeposits << ";withdrawals:" << _nbWithdrawals << std::endl;
 }
 
@@ -113,5 +115,5 @@ int	Account::getNbWithdrawals( void )
 
 Account::~Account( void ) {
 	_displayTimestamp();
-	std::cout << "index:" << _accountIndex << ";amount;" << _amount << ";closed"<< std::endl;	
+	std::cout << "index:" << _accountIndex << ";amount:" << _amount << ";closed"<< std::endl;	
 }
