@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 15:23:17 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/11/18 08:07:46 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/11/20 10:36:35 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	Contact::show_four_contact()
         std::cout << "|             NO CONTACT FOR NOW            |" << std::endl;
 	std::cout << "---------------------------------------------" << std::endl;
 }
+
 void	Contact::show_contact()
 {
     std::cout << "Index " << index << std::endl;
@@ -40,6 +41,7 @@ void	Contact::show_contact()
 	std::cout << "DarkestSecret :";
 	std::cout << darkest_secret << std::endl;
 }
+
 void	Contact::fill_s(std::string _f_name, std::string	_l_name, std::string _nickname, std::string _p_number, std::string _darkest_secret, int i)
 {
 	f_name			= _f_name;

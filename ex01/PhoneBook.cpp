@@ -6,11 +6,18 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 15:23:21 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/11/18 11:40:01 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/11/20 10:36:29 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+
+int	checkEmptyString(std::string str)
+{
+	if (str.empty())
+		return (1);
+	return (0);
+}
 
 void PhoneBook::welcom()
 {
@@ -27,15 +34,20 @@ void PhoneBook::welcom()
 void	PhoneBook::add(int i, Contact contact[8])
 {
 	std::cout << "Enter The First Name" << std::endl;
-	std::getline(std::cin, f_name);
+	while (checkEmptyString(f_name))
+		std::getline(std::cin, f_name);
 	std::cout << "Enter The Last Name" << std::endl;
-	std::getline(std::cin, l_name);
+	while (checkEmptyString(l_name))
+		std::getline(std::cin, l_name);
 	std::cout << "Enter The Nikename" << std::endl;
-	std::getline(std::cin, nickname);
+	while (checkEmptyString(nickname))
+		std::getline(std::cin, nickname);
 	std::cout << "Enter The Phone Number" << std::endl;
-	std::getline(std::cin, p_number);
+	while (checkEmptyString(p_number))
+		std::getline(std::cin, p_number);
 	std::cout << "Enter The Darkest Secret" << std::endl;
-	std::getline(std::cin, darkest_secret);
+	while (checkEmptyString(darkest_secret))
+		std::getline(std::cin, darkest_secret);
 	contact[i].fill_s(f_name, l_name, nickname, p_number, darkest_secret, i);
 	_fill = 1;
 }
@@ -49,6 +61,7 @@ int		PhoneBook::check_nums(std::string s)
 	}
 	return (1);
 }
+
 void	PhoneBook::show_four(Contact contact[8])
 {
 	int tor = 0;
@@ -67,7 +80,7 @@ void	PhoneBook::show_four(Contact contact[8])
 		std::cout << "Enter the index to see all the details! BREAK to exit!" << std::endl;
 		std::getline(std::cin, _index);
 		if (std::cin.eof())
-			fexit();
+			exit(1);
 		__index = std::atoi(_index.c_str());
 		if (__index >= 0 && __index < 9 && _index.compare("BREAK") != 0 && !contact[__index].f_name.empty() && !_index.empty() && check_nums(_index) != 0)
 			contact[__index].show_contact();
@@ -77,14 +90,12 @@ void	PhoneBook::show_four(Contact contact[8])
 			std::cout << "Try Again and Read tearms!" << std::endl;
 	}
 }
+
 void	PhoneBook::search(Contact contact[8])
-	{
-		show_four(contact);
-	}
-void	PhoneBook::fexit()
 {
-	exit(1);
+	show_four(contact);
 }
+
 void	PhoneBook::fill(int i, Contact contact[8])
 {
 	welcom();
@@ -93,7 +104,7 @@ void	PhoneBook::fill(int i, Contact contact[8])
 		std::cout << "Enter the command" << std::endl;
 		std::getline(std::cin, cmd);
 		if (std::cin.eof())
-			fexit();
+			exit(1);
 		if (!cmd.compare("ADD") || !cmd.compare("SEARCH") || !cmd.compare("EXIT"))
 		{
 			if (!cmd.compare("ADD"))
@@ -101,7 +112,7 @@ void	PhoneBook::fill(int i, Contact contact[8])
 			if (!cmd.compare("SEARCH"))
 				search(contact);
 			if (!cmd.compare("EXIT"))
-				fexit();
+				exit(0);
 		}
 		else
 		{

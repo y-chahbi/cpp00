@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 15:23:30 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/11/18 09:47:36 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/11/20 10:35:59 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ class PhoneBook
 		void	add(int i, Contact contact[8]);
 		void	show_four(Contact contact[8]);	
 		void	search(Contact contact[8]);
-		void	fexit();
 		void	fill(int i, Contact contact[8]);
 };
 
