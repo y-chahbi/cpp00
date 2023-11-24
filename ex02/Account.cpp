@@ -6,19 +6,19 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 11:49:30 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/11/19 18:06:48 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/11/24 17:26:46 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <ctime>
+#include <time.h>
 #include "Account.hpp"
 
-int Account::_nbAccounts = 0;
-int Account::_totalAmount = 0;
-int Account::_totalNbDeposits = 0;
-int Account::_totalNbWithdrawals = 0;
-static		int  i = 0;
+int Account::_nbAccounts			= 0;
+int Account::_totalAmount			= 0;
+int Account::_totalNbDeposits		= 0;
+int Account::_totalNbWithdrawals	= 0;
+static	int	i 						= 0;
 
 Account::Account( int initial_deposit )
 {
@@ -76,16 +76,11 @@ void	Account::displayStatus( void ) const
 
 void	Account::_displayTimestamp( void )
 {
-	std::time_t currentTime = std::time(nullptr);
+	std::time_t currentTime = std::time(NULL);
 
-    // Create a buffer to store the formatted time
-    char buffer[80]; // Adjust the size as needed
-
-    // Format the time and store it in the buffer
-    std::strftime(buffer, sizeof(buffer), "%Y%m%d_%H%M%S", std::localtime(&currentTime));
-
-    // Print the formatted time
-    std::cout << "[" << buffer << "] ";
+    char myTime[16];
+    strftime(myTime, sizeof(myTime), "%Y%m%d_%H%M%S", std::localtime(&currentTime));
+    std::cout << "[" << myTime << "] ";
 }
 
 void	Account::displayAccountsInfos( void )
