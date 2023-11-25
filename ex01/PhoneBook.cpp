@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 15:23:21 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/11/24 10:24:17 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/11/25 10:19:15 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void	PhoneBook::add(int i, Contact contact[8])
 {
 	int		repted = 0;
 
-	std::cout << i << std::endl;
 	std::cout << "Enter The First Name" << std::endl;
 	std::getline(std::cin, contact[i].f_name);
 	while (checkEmptyString(contact[i].f_name, &repted))

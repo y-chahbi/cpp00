@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 11:49:30 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/11/24 17:26:46 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/11/25 09:45:04 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,12 @@ bool	Account::makeWithdrawal( int withdrawal )
 	<< _amount << ";withdrawal:refused" << std::endl;
 	return (0);
 }
+
 int		Account::checkAmount( void ) const
 {
 	return (_amount);
 }
+
 void	Account::displayStatus( void ) const
 {
 	_displayTimestamp();
