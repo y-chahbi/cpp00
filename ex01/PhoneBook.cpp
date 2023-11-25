@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 15:23:21 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/11/25 10:19:15 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/11/25 13:09:10 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,10 @@ void	PhoneBook::show_four(Contact contact[8])
 	int	__index;
 
 	std::cout << "---------------------------------------------" << std::endl;
-	std::cout << "|  index   |first Name|last Name | phone num|" << std::endl;
+	std::cout << "|" << std::right << std::setw(10) <<  "index";
+	std::cout << "|" << std::right << std::setw(10) <<  "first Name";
+	std::cout << "|" << std::right << std::setw(10) <<  "last Name";
+	std::cout << "|" << std::right << std::setw(10) <<  "NickName" << "|" << std::endl;
 	std::cout << "---------------------------------------------" << std::endl;
 	while ( tor < 4 && tor == contact[tor].index)
 	{

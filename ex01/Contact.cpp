@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 15:23:17 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/11/20 10:36:35 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/11/25 13:10:38 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	Contact::show_four_contact()
 {
     if (!_f.empty())
 	{
-        std::cout << "|     " << index << "    |"
+        std::cout << "|" << std::right << std::setw(10) << index << "|"
 	    << std::right << std::setw(10) << _f << "|"
 	    << std::right << std::setw(10) << _l << "|"
 	    << std::right << std::setw(10) << _p << "|"
@@ -51,7 +51,7 @@ void	Contact::fill_s(std::string _f_name, std::string	_l_name, std::string _nick
 	darkest_secret	= _darkest_secret;
     _f = _f_name.length() >= 10 ? _f_name.substr(0,9).append(".") : _f = _f_name;
     _l = _l_name.length() >= 10 ? _l_name.substr(0,9).append(".") : _l = _l_name;
-    _p = _p_number.length() >= 10 ? _p_number.substr(0,9).append(".") : _p = _p_number;
+    _p = _nickname.length() >= 10 ? _nickname.substr(0,9).append(".") : _p = _nickname;
     index = i % 8;
 	show_contact();
 }
