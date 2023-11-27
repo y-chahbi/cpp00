@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 15:23:24 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/11/18 11:42:25 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/11/26 17:40:49 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@
 
 class Contact
 {
-	public:
+	private:
 		std::string	f_name, l_name, nickname, p_number, darkest_secret, _f;
 		std::string	_l;
 		std::string	_p;
+	public:
 		int	index;
 
 		void	show_four_contact();
