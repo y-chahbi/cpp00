@@ -24,5 +24,6 @@ int main(int ac, char **av)
             for (int j = 0; str.length() > j ; j++)
                 std::cout << (char)std::toupper(str[j]);
         }
+        std::cout << std::endl;
     }
 }
