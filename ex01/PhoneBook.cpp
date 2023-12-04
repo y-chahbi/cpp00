@@ -6,17 +6,25 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 15:23:21 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/11/26 17:49:22 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/12/04 15:21:59 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
+int checkspaces(std::string theword)
+{
+	for (unsigned long i = 0; i < theword.length(); i++)
+		if (theword.at(i) != 32)
+			return (0);
+	return (1);
+}
+
 int	checkEmptyString(std::string str, int *re)
 {
 	if (std::cin.eof())
 		exit(1);
-	if ((str.empty() && *re == 0) || (str.empty() && *re == 1))
+	if ((str.empty() && *re == 0) || (str.empty() && *re == 1) || checkspaces(str))
 		return (std::cout << "The Field can't be Empty!" << std::endl, 1);
 	return (*re = 0, 0);
 }
