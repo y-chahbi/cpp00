@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 15:23:24 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/11/26 17:40:49 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/12/04 10:41:00 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include <iostream>
 # include <iomanip>
-# include <cctype>
-# include <fstream>
 
 class Contact
 {

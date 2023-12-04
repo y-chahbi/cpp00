@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 15:23:17 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/11/25 13:10:38 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/12/04 11:06:44 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,12 @@ void	Contact::show_four_contact()
 
 void	Contact::show_contact()
 {
-    std::cout << "Index " << index << std::endl;
-	std::cout << "First Name :";
-	std::cout << f_name << std::endl;
-	std::cout << "Last Name :";
-	std::cout << l_name << std::endl;
-	std::cout << "NickName :";
-	std::cout << nickname << std::endl;
-	std::cout << "PhoneNumber :";
-	std::cout << p_number << std::endl;
-	std::cout << "DarkestSecret :";
-	std::cout << darkest_secret << std::endl;
+    std::cout << "Index :" << index << std::endl;
+	std::cout << "First Name :" << f_name << std::endl;
+	std::cout << "Last Name :" << l_name << std::endl;
+	std::cout << "NickName :" << nickname << std::endl;
+	std::cout << "PhoneNumber :" << p_number << std::endl;
+	std::cout << "DarkestSecret :" << darkest_secret << std::endl;
 }
 
 void	Contact::fill_s(std::string _f_name, std::string	_l_name, std::string _nickname, std::string _p_number, std::string _darkest_secret, int i)
