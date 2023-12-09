@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 15:23:21 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/12/04 15:21:59 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/12/09 13:06:42 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,9 @@ void	PhoneBook::show_four()
 		if (std::cin.eof())
 			exit(1);
 		__index = std::atoi(_index.c_str());
-		if (__index >= 0 && __index < 9 && _index.compare("BREAK") != 0 && !f_name.empty() && !_index.empty() && check_nums(_index) != 0)
+		if (__index >= 0 && __index < 8 && _index.compare("BREAK") != 0 && !f_name.empty()
+			&& !_index.empty() && check_nums(_index) != 0
+				&& __index == contact[__index].index)
 			contact[__index].show_contact();
 		else if(_index.compare("BREAK") == 0)
 		{
