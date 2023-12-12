@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 14:57:12 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/12/05 20:56:24 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/12/12 12:40:58 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main(int ac, char **av)
         for (int i = 1; i < ac; i++)
         {
             std::string str = av[i];
-            for (int j = 0; str.length() > j ; j++)
+            for (unsigned int j = 0; str.length() > j ; j++)
                 std::cout << (char)std::toupper(str[j]);
         }
         std::cout << std::endl;

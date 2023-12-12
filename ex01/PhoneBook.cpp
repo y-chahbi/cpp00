@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 15:23:21 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/12/09 13:06:42 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/12/12 12:49:42 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int checkspaces(std::string theword)
 {
 	for (unsigned long i = 0; i < theword.length(); i++)
-		if (theword.at(i) != 32)
+		if (theword.at(i) != 32 && theword.at(i) != '\t')
 			return (0);
 	return (1);
 }
